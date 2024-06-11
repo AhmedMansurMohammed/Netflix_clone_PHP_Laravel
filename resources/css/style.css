@@ -1,0 +1,436 @@
+:root {
+    --dark: rgb(33, 37, 41);
+    --red: rgb(176, 42, 55);
+}
+
+body,
+main {
+    min-height: 100vh;
+    font-family: "Poppins";
+}
+
+.navbar-nav .nav-link {
+    margin-right: 10px;
+    /* Adjust as needed */
+}
+
+/*login*/
+.background-login {
+    background-image: url("/public/images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form-check-input:checked {
+    background-color: var(--red);
+    border-color: var(--red);
+}
+
+/*subscription*/
+.pricing-header {
+    max-width: 700px;
+}
+
+section.pricing {
+    background: var(--dark);
+}
+
+.pricing .card {
+    border: none;
+    border-radius: 1rem;
+    transition: all 0.2s;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.pricing hr {
+    margin: 1.5rem 0;
+}
+
+.pricing .card-title {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+}
+
+.pricing .card-price {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.pricing .card-price .period {
+    font-size: 0.8rem;
+}
+
+.pricing ul li {
+    margin-bottom: 1rem;
+}
+
+.pricing ul {
+    height: 30vh;
+}
+
+.pricing .text-muted {
+    opacity: 0.7;
+}
+
+.pricing .btn {
+    font-size: 80%;
+    border-radius: 5rem;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+    padding: 1rem;
+    opacity: 0.7;
+    transition: all 0.2s;
+}
+
+/* subscription hover Effects on Card */
+
+@media (min-width: 992px) {
+    .pricing .card:hover {
+        margin-top: -0.25rem;
+        margin-bottom: 0.25rem;
+        box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+    }
+
+    .pricing .card:hover .btn {
+        opacity: 1;
+    }
+}
+
+/* Custom Modal Styles */
+.custom-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-dialog {
+    top: 40% !important;
+    transform: translateY(-50%) !important;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Make the modal responsive */
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 90%;
+        width: auto !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .modal-dialog {
+        max-width: 80%;
+        width: auto !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .modal-dialog {
+        max-width: 70%;
+        width: auto !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .modal-dialog {
+        max-width: 60%;
+        width: auto !important;
+    }
+}
+/*profile*/
+.background-custom {
+    background: var(--red);
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+/*detail*/
+.video-thumbnail {
+    width: 150px;
+    height: 150px;
+}
+
+.movie-poster {
+    max-width: 100%;
+    height: 400px;
+    margin-bottom: 10px;
+}
+
+.description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* num of line */
+    -webkit-box-orient: vertical;
+}
+
+@media (max-width: 768px) {
+    .video-thumbnail {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+/*movies i series list*/
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay i {
+    font-size: 3rem;
+    color: white;
+}
+
+/* Estilos para el carousel del home en dispositivos móviles y tablets */
+@media (max-width: 785px) {
+    .carousel-inner .carousel-item {
+        display: none;
+    }
+
+    .carousel-inner .carousel-item.active {
+        display: block;
+    }
+    .carousel-inner .carousel-item .card {
+        width: 100%;
+        margin: 0 auto 0.5rem;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #333;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        position: relative;
+    }
+
+    .carousel-inner .carousel-item .card img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Reemplazar el botón con un icono de reproducción al pasar el ratón sobre la imagen */
+    .carousel-inner .carousel-item .card:hover .overlay {
+        display: flex;
+    }
+
+    .carousel-inner .carousel-item .card .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .carousel-inner .carousel-item .card .overlay i {
+        color: white;
+        font-size: 1rem;
+    }
+
+    .carousel-inner .carousel-item .card .card-body {
+        display: none;
+    }
+    /* Ajustar el tamaño de fuente del botón */
+    button {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 14px;
+    }
+    .font-mobile {
+        font-size: 14px;
+    }
+
+    /* Estilos para el footer */
+    .footer {
+        padding: 10px 0;
+        text-align: center;
+        font-size: 14px;
+    }
+    .card-text {
+        /* Limit to two lines */
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+
+        /* Set max-height to two lines of text */
+        max-height: 3.6em; /* Adjust according to your font size and line height */
+
+        /* Ensure text doesn't overflow */
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+.equal-height {
+    height: 20vh; /* Set the height to 100% of the parent container */
+    overflow: hidden; /* Hide any overflow content */
+}
+
+.equal-movieHeight {
+    height: 15vh; /* Set the height to 100% of the parent container */
+    overflow: hidden; /* Hide any overflow content */
+}
+.equal-serieHeight {
+    height: 15vh; /* Set the height to 100% of the parent container */
+    overflow: hidden; /* Hide any overflow content */
+}
+
+.card-title-fixed-height {
+    height: 50px; /* Altura fija para el card-title */
+    overflow: hidden;
+}
+.card-text-expand {
+    /* Limit to two lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    /* Set max-height to two lines of text */
+    max-height: 6em; /* Adjust according to your font size and line height */
+
+    /* Ensure text doesn't overflow */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.btn-bottom {
+    position: absolute;
+    bottom: 10px; /* Ajusta la posición del botón */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+/* Estilos para pantallas no completas */
+@media (max-width: 991.98px) {
+    .card-height {
+        max-height: 350px;
+        min-height: 350px; /* Altura fija para pantallas no completas */
+    }
+    .card-height-media {
+        max-height: 320px;
+        min-height: 320px; /* Altura fija para pantallas no completas */
+    }
+    .card-title-fixed-height {
+        height: 50px; /* Altura fija para el card-title */
+        overflow: hidden;
+    }
+    .card-text-expand {
+        /* Limit to two lines */
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+
+        /* Set max-height to two lines of text */
+        max-height: 6em; /* Adjust according to your font size and line height */
+
+        /* Ensure text doesn't overflow */
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .btn-bottom {
+        position: absolute;
+        bottom: 10px; /* Ajusta la posición del botón */
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+    }
+}
+
+h2 {
+    margin: 80px auto;
+}
+
+.centerForm {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/*admin header*/
+
+.adminHeader {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.sidebar {
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    width: 280px;
+    padding: 20px;
+    background-color: #343a40;
+    color: #fff;
+    overflow-y: hidden; /* Permite el desplazamiento vertical cuando el contenido excede la altura del div */
+    height: calc(100vh);
+}
+
+.admin {
+    padding-top: 60px;
+    margin-left: 280px;
+    padding: 20px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: margin-left 0.3s; /* Agregar transición para un efecto suave */
+}
+
+.toggle-btn {
+    display: none; /* Ocultar el botón en pantallas grandes */
+}
+
+@media (max-width: 768px) {
+    .toggle-btn {
+        display: block;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 999;
+    }
+    .admin {
+        margin-left: 0px;
+    }
+}
+
+.card-custom {
+    min-height: 350px; /* Altura mínima de la tarjeta */
+    max-height: 350px; /* Altura máxima de la tarjeta */
+    overflow: hidden; /* Ocultar el contenido que exceda la altura máxima */
+}
