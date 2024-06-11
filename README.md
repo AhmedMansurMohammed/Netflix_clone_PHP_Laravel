@@ -48,4 +48,4 @@ The first time you run this project you need to migrate and seed all the databas
 
 ## License
 
-The Laravel Tutorial was made by Dan Triano
+The Laravel Netflix clone was build by Ahmed Mansur Mohammed
